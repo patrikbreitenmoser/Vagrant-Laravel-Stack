@@ -1,7 +1,8 @@
 site :opscode
-
+cookbook 'yum'
 cookbook 'php'
 cookbook 'apt'
+cookbook 'java', git: 'git://github.com/opscode-cookbooks/java.git'
 cookbook 'build-essential'
 cookbook 'memcached'
 cookbook 'mysql'
@@ -16,3 +17,6 @@ cookbook 'npm', git: 'git://github.com/balbeko/chef-npm'
 cookbook 'laravel', git: 'git://github.com/MiniCodeMonkey/chef-laravel'
 cookbook 'beanstalk_console', git: 'git://github.com/MiniCodeMonkey/chef-beanstalk_console'
 cookbook 'apache2', git: 'git://github.com/MiniCodeMonkey/apache24'
+cookbook 'yumrepo', git: 'git://github.com/bryanwb/cookbook-yumrepo.git'
+cookbook 'rbenv', git: 'git://github.com/RiotGames/rbenv-cookbook.git'
+cookbook 'elasticsearch', git: 'git://github.com/elasticsearch/cookbook-elasticsearch.git'

@@ -61,7 +61,23 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "postgresql::server"
         chef.add_recipe "postfix"
         chef.add_recipe "phpunit"
+        chef.add_recipe "elasticsearch"
+
+        chef.run_list = %w[
+            java
+            elasticsearch
+        ]
+
         chef.json = {
+            :elasticsearch => {
+                  cluster_name: "laravelstack",
+                  min_mem: '64m',
+                  max_mem: '128m',
+                  limits: {
+                        nofile:  1024,
+                        memlock: 512
+                  }
+            },
             :laravel => {
                 # Project name
                 :name           => project_name,
